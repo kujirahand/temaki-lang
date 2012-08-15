@@ -1,0 +1,10 @@
+# test while
+# ---
+
+0 v lset
+{
+  %v .
+  v inc
+}
+(%v 5 <=) while
+

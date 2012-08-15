@@ -1,0 +1,27 @@
+# --- call
+{
+  "test" print
+}
+call
+
+# --- def call
+{
+  "hoge" print
+}
+hoge set
+hoge!
+
+# ---
+{
+  "outer" outer lset
+  100 v lset
+  {
+    "inner" inner lset
+    200 v lset
+    {
+      %outer print
+      %inner print
+      %v print
+    } call
+  } call
+} call

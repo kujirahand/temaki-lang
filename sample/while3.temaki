@@ -1,0 +1,16 @@
+# ---
+# while3
+# ---
+{
+  # --- (i) print_even!
+  {
+    i lset
+    { %i print } %i 2 % 0 == if
+  } print_even lset
+  # --- while
+  0 i lset
+  { %i print_even! : i inc }
+  (%i 10 <=)
+  while
+} call
+

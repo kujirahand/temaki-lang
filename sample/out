@@ -1,0 +1,66 @@
+tokenize
+-5:{
+-7:{
+-8:i
+-8:lset
+-9:{
+-9:%i
+-9:print
+-9:}
+-9:%i
+-9:2
+-9:%
+-9:0
+-9:==
+-9:if
+-10:}
+-10:print_even
+-10:lset
+-12:0
+-12:i
+-12:lset
+-13:{
+-13:%i
+-13:print_even
+-13:!
+-13:}
+-14:i
+-14:10
+-14:>=
+-15:while
+-16:}
+-16:call
+ - run-) {line:5,i:0} > {
+ | - push) [object]  {"no":5,"type":"block","word":"{","block_begin":1,"block_end":30}
+ - run-) {line:16,i:30} > call
+ | - pop_) [object]  {"no":5,"type":"block","word":"{","block_begin":1,"block_end":30}
+call: {callStack:1}
+ - run-) {line:7,i:1} > {
+ | - push) [object]  {"no":7,"type":"block","word":"{","block_begin":2,"block_end":15}
+ - run-) {line:10,i:15} > print_even
+ | - push) [object]  {"no":10,"type":"word","word":"print_even"}
+ - run-) {line:10,i:16} > lset
+ | - pop_) [object]  {"no":10,"type":"word","word":"print_even"}
+ | - pop_) [object]  {"no":7,"type":"block","word":"{","block_begin":2,"block_end":15}
+ - run-) {line:12,i:17} > 0
+ | - push) [number]  0
+ - run-) {line:12,i:18} > i
+ | - push) [object]  {"no":12,"type":"word","word":"i"}
+ - run-) {line:12,i:19} > lset
+ | - pop_) [object]  {"no":12,"type":"word","word":"i"}
+ | - pop_) [number]  0
+ - run-) {line:13,i:20} > {
+ | - push) [object]  {"no":13,"type":"block","word":"{","block_begin":21,"block_end":25}
+ - run-) {line:14,i:25} > i
+ | - push) [object]  {"no":14,"type":"word","word":"i"}
+ - run-) {line:14,i:26} > 10
+ | - push) [number]  10
+ - run-) {line:14,i:27} > >=
+ | - pop_) [number]  10
+ | - pop_) [object]  {"no":14,"type":"word","word":"i"}
+ | - push) [boolean]  false
+ - run-) {line:15,i:28} > while
+ | - pop_) [boolean]  false
+ | - pop_) [object]  {"no":13,"type":"block","word":"{","block_begin":21,"block_end":25}
+ - run-) {line:16,i:29} > }
+ | - * run_exit=block: line 16

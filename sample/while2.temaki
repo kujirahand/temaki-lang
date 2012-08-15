@@ -1,0 +1,14 @@
+#--- while2
+
+0 i lset
+{
+  "--- i=" %i + print
+  10 j lset
+  {
+    "j=" %j + print
+    j dec
+  } %j 5 > while
+  i inc
+} %i 3 <= while
+
+

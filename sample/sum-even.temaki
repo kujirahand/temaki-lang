@@ -1,0 +1,16 @@
+# sum even from 1 to 100
+# ---
+# (fromV) (toV) sum_even
+{
+  toV lset : fromV lset
+  0 v lset
+  {
+    { %v %i + v lset }
+    (%i 2 %) 0 == if
+  }
+  %fromV %toV i for
+  %v
+} sum_even set
+# ---
+1 100 sum_even! .
+

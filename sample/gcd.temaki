@@ -1,0 +1,17 @@
+# 最大公約数(the greatest common divisor g.c.d)
+# ---
+# (a) (b) gcd
+{
+  (b lset : a lset)
+  { (%a %b) (b lset : a lset)  } %a %b < if
+  {
+    %a %b % r lset
+    { %b : exit } %r 0 == if
+    %b a lset
+    %r b lset
+  } 1 while
+} gcd set
+# ---
+# test
+98 252 gcd! .
+

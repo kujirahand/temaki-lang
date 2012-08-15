@@ -1,0 +1,16 @@
+# fibonacci
+
+#--- fib
+{
+  i lset
+  { %i exit } (%i 0 ==) (%i 1 ==) || if
+  %i 1 - fib! 
+  %i 2 - fib!
+  +
+} fib set
+
+#--- test
+9 fib! .
+# > 34
+
+

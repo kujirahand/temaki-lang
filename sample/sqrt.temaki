@@ -1,0 +1,15 @@
+# sqrt
+
+# --- sqrt
+{
+  n lset : base lset
+  { 0 } %n 0 = if
+  1 v lset
+  { %v %base * v lset } 1 %n i for
+  %v
+} sqrt set
+
+# --- test
+2 3 sqrt! .
+
+
