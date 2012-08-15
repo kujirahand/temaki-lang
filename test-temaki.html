@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>Temaki言語テスト</title>
+  <script type="text/javascript"
+    src="temaki.js?v=1"></script>
+  <script type="text/javascript">
+  Temaki.debug = true;
+  Temaki.log = function (s) { console.log(s); }
+  Temaki.print = function (s) {
+    $("result").value = $("result").value + s + "\n";
+  }
+  function $(id) { return document.getElementById(id); }
+  window.onload = function () {
+    run();
+  };
+  function run() {
+    $("result").value = "";
+    var src = $("source").value;
+    var res = Temaki.eval(src);
+    if (res != null) {
+      Temaki.print(res);
+    }
+  }
+  // もし<script>で実行するならば...
+  function runScriptTemaki() {
+    var items = document.querySelectorAll("script[type='text/temaki']");
+    for (var i in items) {
+      var item = items[i];
+      if ((typeof(item.type) != "string") ||
+          (item.type != "text/temaki")) continue;
+      var src = item.firstChild.nodeValue;
+      if (typeof(src) != "string") continue;
+      Temaki.eval(src);
+    }
+  }
+  </script>
+  <script type="text/temaki">
+    # hoge
+    1 2 + .
+  </script>
+</head>
+<body bgcolor="#f0f0f0">
+<h1>Temaki lang Test page</h1>
+<p>Temaki code:</p>
+<textarea id="source" cols="60" rows="10">
+# ---
+2 3 * print
+# ---
+45 v set
+%v print
+# ---
+</textarea><br/>
+<button onclick="run()">Run</button>
+<p>Results:</p>
+<textarea id="result" cols="60" rows="5">
+</textarea>
+<p>- Support : <a href="http://d.aoikujira.com/labo/index.php?Temaki-lang">Support</a></p>
+</body>
+</html>
+
