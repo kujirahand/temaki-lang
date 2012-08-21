@@ -1,0 +1,19 @@
+{
+  # sum odd value from 1 to 100
+  # (fromV) (toV) sum_odd
+  {
+    toV lset
+    fromV lset
+    0 kei lset
+    {
+      { %kei %i + kei lset } (%i 2 % 1 ==) if
+    }
+    %fromV %toV i for
+    %kei
+  } sum_odd lset
+  # test
+  1 100 sum_odd! .
+}
+call
+
+
