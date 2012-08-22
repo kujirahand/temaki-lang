@@ -430,7 +430,9 @@
   function getObjectDesc(o) {
     var s = "";
     s += "[" + typeof(o) + "] ";
-    s += " " + JSON.stringify(o);
+    if (typeof(JSON) != "undefined") {
+      s += " " + JSON.stringify(o);
+    }
     return s;
   }
   // 関数の実行
