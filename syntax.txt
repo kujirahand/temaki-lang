@@ -1,0 +1,95 @@
+* Syntax
+
+Temaki is Stack orietend Programming language.
+It is Reverse Polish Notaion(RPN) Calc.
+
+** Basic
+
+Calc
+
+{{{
+3 5 + print
+# 8
+}}}
+
+print = "."
+
+{{{
+1 2 3 * + .
+# 7
+}}}
+
+** Variables
+
+"set" and "get"
+
+{{{
+100 v set
+v get print
+# 100
+}}}
+
+"v get" = "%v"
+
+{{{
+100 v set
+%v print
+200 n set
+%n print
+}}}
+
+** ifelse
+
+{{{
+100 v set
+# if
+{ "even" print } # true
+{ "odd"  print } # false
+%v 2 % 0 ==      # cond
+ifelse
+}}}
+
+** while
+
+1 to 10 sum.
+
+{{{
+0 kei set
+1 i set
+{
+  %kei %i + kei set
+  i inc
+}
+%i 10 <=   # cond
+while
+%kei print
+}}}
+
+** function
+
+it can set block { ... }.
+
+{{{
+{ "hoge" print } a_func set
+a_func call
+}}}
+
+"f call" = "f!"
+
+{{{
+{ "hoge" print } a_func set
+a_func!
+}}}
+
+local variables "lset"
+
+{{{
+{
+  100 v lset
+  %v print
+}
+call
+}}}
+
+
+
