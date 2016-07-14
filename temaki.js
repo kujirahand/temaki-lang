@@ -21,6 +21,7 @@
     if (this.useDebug) this.print(s);
   };
   T.print = function (s) { print(s); }
+  
   // 単語に分割する
   function tokenize(source) {
     var r = [];
@@ -583,3 +584,6 @@
     root_t.block_end = i;
   }
 })(this);
+
+module.exports = this.Temaki;
+
